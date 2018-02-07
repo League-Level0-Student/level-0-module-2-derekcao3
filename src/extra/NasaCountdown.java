@@ -15,16 +15,18 @@ import javax.swing.JOptionPane;
  **/
 
 public class NasaCountdown {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// 2. Use a pop-up to ask the user where to start counting from
-		JOptionPane.showInputDialog(null, "What number would like to start from?");
+		String input = JOptionPane.showInputDialog(null, "What number would like to start from?");
 		// 3. Change the countdown to use the new starting point
+		int start = Integer.parseInt(input);
 		// 1. Print a countdown from 10 to 0 on the console
-		for (int i = 10; i > 0; i--) {
-			System.out.println(i);
-		}
-		// 4. Use the speak method to hear the countdown.
+		for (; start >= 0; start--) {
+			System.out.println(start);
 		
+		// 4. Use the speak method to hear the countdown.
+		Thread.sleep(1000);
+		}
 		// 5. when the counting is done, speak "blastoff!"
 	}
 
